@@ -20,6 +20,12 @@ from ask_sdk_model import Response
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
+# read mock data
+with open('car_data.json', 'r') as myfile:
+    jsonData = myfile.read()
+
+data = json.loads(jsonData)
+
 
 class LaunchRequestHandler(AbstractRequestHandler):
     """Handler for Skill Launch."""
