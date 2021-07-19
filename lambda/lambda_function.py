@@ -60,7 +60,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
         #     recommendationResult['energy'] = api_request.arguments['energy']
         #     recommendationResult['temperament'] = api_request.arguments['temperament']
         
-        if budget != None and fuel_eff != None and reliable != None and rugged != None and spacious != None:
+        if budget != None or fuel_eff != None or reliable != None or rugged != None or spacious != None:
             filtered_cars = []
             find_budget(budget)
             find_fuel_eff(fuel_eff)
