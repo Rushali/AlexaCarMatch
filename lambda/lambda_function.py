@@ -49,16 +49,23 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
 
         recommendationResult = {}
 
-        if energy != None and size != None and temperament != None:
-            key = energy + '-' + size + '-' + temperament
-            databaseResponse = data[key]
+        # if energy != None and size != None and temperament != None:
+        #     key = energy + '-' + size + '-' + temperament
+        #     databaseResponse = data[key]
 
-            print("Response from mock database ", databaseResponse)
+        #     print("Response from mock database ", databaseResponse)
 
-            recommendationResult['name'] = databaseResponse['breed']
-            recommendationResult['size'] = api_request.arguments['size']
-            recommendationResult['energy'] = api_request.arguments['energy']
-            recommendationResult['temperament'] = api_request.arguments['temperament']
+        #     recommendationResult['name'] = databaseResponse['breed']
+        #     recommendationResult['size'] = api_request.arguments['size']
+        #     recommendationResult['energy'] = api_request.arguments['energy']
+        #     recommendationResult['temperament'] = api_request.arguments['temperament']
+        
+        if budget != None and fuel_eff != None and reliable != None and rugged != None and spacious != None:
+            find_budget(budget)
+            find_fuel_eff(fuel_eff)
+            find_reliable(reliable)
+            find_rugged(rugged)
+            find_spacious(spacious)
 
         response = buildSuccessApiResponse(recommendationResult)
         
