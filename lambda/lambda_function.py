@@ -68,13 +68,13 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
         recommendationResult = {}
         recommendationResult['name'] = "optimus prime is the right car for you"
 
-        if budget != None and size != None and temperament != None:
-            key = energy + '-' + size + '-' + temperament
-            databaseResponse = data[key]
+        # if budget != None and size != None and temperament != None:
+        #     key = energy + '-' + size + '-' + temperament
+        #     databaseResponse = data[key]
 
-            print("Response from mock database ", databaseResponse)
+        #     print("Response from mock database ", databaseResponse)
 
-            recommendationResult['name'] = "optimus prime is the right car for you"
+        #     recommendationResult['name'] = "optimus prime is the right car for you"
 
         response = buildSuccessApiResponse(recommendationResult)
         
