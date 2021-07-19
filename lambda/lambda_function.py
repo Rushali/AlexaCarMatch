@@ -61,6 +61,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
         #     recommendationResult['temperament'] = api_request.arguments['temperament']
         
         if budget != None or fuel_eff != None or reliable != None or rugged != None or spacious != None:
+            recommendationResult['car_name'] = 'testing this , car is optimus prime'
             filtered_cars = []
             find_budget(budget)
             find_fuel_eff(fuel_eff)
