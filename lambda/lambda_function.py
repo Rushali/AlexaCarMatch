@@ -66,17 +66,15 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
         spacious = resolveEntity(api_request.slots, "spacious")
 
         recommendationResult = {}
+        recommendationResult['name'] = "optimus prime is the right car for you"
 
-        if energy != None and size != None and temperament != None:
+        if budget != None and size != None and temperament != None:
             key = energy + '-' + size + '-' + temperament
             databaseResponse = data[key]
 
             print("Response from mock database ", databaseResponse)
 
-            recommendationResult['name'] = databaseResponse['breed']
-            recommendationResult['size'] = api_request.arguments['size']
-            recommendationResult['energy'] = api_request.arguments['energy']
-            recommendationResult['temperament'] = api_request.arguments['temperament']
+            recommendationResult['name'] = "optimus prime is the right car for you"
 
         response = buildSuccessApiResponse(recommendationResult)
         
