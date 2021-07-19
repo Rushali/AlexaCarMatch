@@ -42,13 +42,13 @@ class GetDescriptionAPIHandler(AbstractRequestHandler):
         spacious = recommendationResult['spacious']
         
         # setting the actual response if we find a match for their preference
-        if energy != None and size != None and temperament != None:
-            key = energy + '-' + size + '-' + temperament
-            databaseResponse = data[key]
+        # if energy != None and size != None and temperament != None:
+        #     key = energy + '-' + size + '-' + temperament
+        #     databaseResponse = data[key]
         
-        descriptionEntity = {
-            "description": databaseResponse['description']
-        }
+        # descriptionEntity = {
+        #     "description": databaseResponse['description']
+        # }
         
         response = buildSuccessApiResponse(descriptionEntity)
 
