@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
 # read mock data
-with open('PetMatch.json', 'r') as myfile:
+with open('car_data.json', 'r') as myfile:
     jsonData = myfile.read()
 
 data = json.loads(jsonData)
