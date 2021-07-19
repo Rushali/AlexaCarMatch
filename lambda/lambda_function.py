@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-
-# This sample demonstrates handling intents from an Alexa skill using the Alexa Skills Kit SDK for Python.
-# Please visit https://alexa.design/cookbook for additional examples on implementing slots, dialog management,
-# session persistence, api calls, and more.
-# This sample is built using the handler classes approach in skill builder.
 import logging
 import json
 import ask_sdk_core.utils as ask_utils
@@ -21,11 +15,39 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
 # read mock data
-with open('car_data.json', 'r') as myfile:
+with open('PetMatch.json', 'r') as myfile:
     jsonData = myfile.read()
 
 data = json.loads(jsonData)
 
+class GetDescriptionAPIHandler(AbstractRequestHandler):
+    def can_handle(self, handler_input):
+        # type: (HandlerInput) -> bool
+        return ask_utils.request_util.get_request_type(handler_input) == 'Dialog.API.Invoked' and handler_input.request_envelope.request.api_request.name == 'getDescription'
+
+
+    def handle(self, handler_input):
+        # type: (HandlerInput) -> Response
+        arguments = handler_input.request_envelope.request.api_request.arguments
+        recommendationResult = arguments['recommendationResult']
+        # setting the default response.
+        databaseResponse = "I don't know much about " + recommendationResult['name']  + "."
+        energy = recommendationResult['energy']
+        size = recommendationResult['size']
+        temperament = recommendationResult['temperament']
+        
+        # setting the actual response if we find a match for their preference
+        if energy != None and size != None and temperament != None:
+            key = energy + '-' + size + '-' + temperament
+            databaseResponse = data[key]
+        
+        descriptionEntity = {
+            "description": databaseResponse['description']
+        }
+        
+        response = buildSuccessApiResponse(descriptionEntity)
+
+        return response
 
 class GetRecommendationAPIHandler(AbstractRequestHandler):
     def can_handle(self, handler_input):
@@ -37,63 +59,32 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
         # type: (HandlerInput) -> Response
         api_request = handler_input.request_envelope.request.api_request
 
-        # energy = resolveEntity(api_request.slots, "energy")
-        # size = resolveEntity(api_request.slots, "size")
-        # temperament = resolveEntity(api_request.slots, "temperament")
-        
-        budget = resolveEntity(api_request.slots, "budget")
-        fuel_eff = resolveEntity(api_request.slots, "fuel_eff")
-        reliable = resolveEntity(api_request.slots, "reliable")
-        rugged = resolveEntity(api_request.slots, "rugged")
-        spacious = resolveEntity(api_request.slots, "spacious")
+        energy = resolveEntity(api_request.slots, "energy")
+        size = resolveEntity(api_request.slots, "size")
+        temperament = resolveEntity(api_request.slots, "temperament")
 
         recommendationResult = {}
 
-        # if energy != None and size != None and temperament != None:
-        #     key = energy + '-' + size + '-' + temperament
-        #     databaseResponse = data[key]
+        if energy != None and size != None and temperament != None:
+            key = energy + '-' + size + '-' + temperament
+            databaseResponse = data[key]
 
-        #     print("Response from mock database ", databaseResponse)
+            print("Response from mock database ", databaseResponse)
 
-        #     recommendationResult['name'] = databaseResponse['breed']
-        #     recommendationResult['size'] = api_request.arguments['size']
-        #     recommendationResult['energy'] = api_request.arguments['energy']
-        #     recommendationResult['temperament'] = api_request.arguments['temperament']
-        
-        if budget != None or fuel_eff != None or reliable != None or rugged != None or spacious != None:
-            recommendationResult['name'] = 'testing this , car is optimus prime'
-            filtered_cars = []
-            find_budget(budget)
-            find_fuel_eff(fuel_eff)
-            find_reliable(reliable)
-            find_rugged(rugged)
-            find_spacious(spacious)
+            recommendationResult['name'] = databaseResponse['breed']
+            recommendationResult['size'] = api_request.arguments['size']
+            recommendationResult['energy'] = api_request.arguments['energy']
+            recommendationResult['temperament'] = api_request.arguments['temperament']
 
         response = buildSuccessApiResponse(recommendationResult)
         
         return response
-        
-    def find_budget(self, budget):
-        # filter for right MSRP 
-        print(budget)
-        
-    def find_fuel_eff(self, fuel_eff):
-        #filter for fuel fuel_eff
-        print(fuel_eff)
-    
-    def find_reliable(self, reliable):
-        #filter for reliable
-        print(reliable)
-        
-    def find_rugged(self, rugged):
-        #filter for rugged
-        print(rugged)
-    
-    def find_spacious(self, spacious):
-        #filter for spacious
-        print(spacious)
-        
-        
+
+
+# Formats JSON for return
+# You can use the private SDK methods like "setApiResponse()", but for this template for now, we just send back
+# the JSON. General request and response JSON format can be found here:
+# https://developer.amazon.com/docs/custom-skills/request-and-response-json-reference.html
 def buildSuccessApiResponse(returnEntity):
     return { "apiResponse": returnEntity }
 
@@ -113,6 +104,7 @@ class SessionEndedRequestHandler(AbstractRequestHandler):
         # Any cleanup logic goes here.
 
         return handler_input.response_builder.response
+
 
 # *****************************************************************************
 # Resolves catalog value using Entity Resolution
@@ -152,6 +144,7 @@ class IntentReflectorHandler(AbstractRequestHandler):
             .response
         )
 
+
 class CatchAllExceptionHandler(AbstractExceptionHandler):
     """Generic error handling to capture any syntax or routing errors. If you receive an error
     stating the request handler chain is not found, you have not implemented a handler for
@@ -175,6 +168,7 @@ class CatchAllExceptionHandler(AbstractExceptionHandler):
             .response
         )
 
+
 # *****************************************************************************
 # These simple interceptors just log the incoming and outgoing request bodies to assist in debugging.
 
@@ -187,7 +181,8 @@ class LoggingRequestInterceptor(AbstractRequestInterceptor):
 class LoggingResponseInterceptor(AbstractResponseInterceptor):
     def process(self, handler_input, response):
         print("Response generated: {}".format(response))
-        
+
+
 # The SkillBuilder object acts as the entry point for your skill, routing all request and response
 # payloads to the handlers above. Make sure any new handlers or interceptors you've
 # defined are included below. The order matters - they're processed top to bottom.
@@ -195,6 +190,7 @@ sb = SkillBuilder()
 
 # register request / intent handlers
 sb.add_request_handler(GetRecommendationAPIHandler())
+sb.add_request_handler(GetDescriptionAPIHandler())
 sb.add_request_handler(SessionEndedRequestHandler())
 sb.add_request_handler(IntentReflectorHandler())
 
@@ -206,154 +202,3 @@ sb.add_global_request_interceptor(LoggingRequestInterceptor())
 sb.add_global_response_interceptor(LoggingResponseInterceptor())
 
 lambda_handler = sb.lambda_handler()
-
-
-# class LaunchRequestHandler(AbstractRequestHandler):
-#     """Handler for Skill Launch."""
-#     def can_handle(self, handler_input):
-#         # type: (HandlerInput) -> bool
-
-#         return ask_utils.is_request_type("LaunchRequest")(handler_input)
-
-#     def handle(self, handler_input):
-#         # type: (HandlerInput) -> Response
-#         speak_output = "Welcome, you can say Hello or Help. Which would you like to try?"
-
-#         return (
-#             handler_input.response_builder
-#                 .speak(speak_output)
-#                 .ask(speak_output)
-#                 .response
-#         )
-
-
-# class HelloWorldIntentHandler(AbstractRequestHandler):
-#     """Handler for Hello World Intent."""
-#     def can_handle(self, handler_input):
-#         # type: (HandlerInput) -> bool
-#         return ask_utils.is_intent_name("HelloWorldIntent")(handler_input)
-
-#     def handle(self, handler_input):
-#         # type: (HandlerInput) -> Response
-#         speak_output = "Hello World!"
-
-#         return (
-#             handler_input.response_builder
-#                 .speak(speak_output)
-#                 # .ask("add a reprompt if you want to keep the session open for the user to respond")
-#                 .response
-#         )
-
-
-# class HelpIntentHandler(AbstractRequestHandler):
-#     """Handler for Help Intent."""
-#     def can_handle(self, handler_input):
-#         # type: (HandlerInput) -> bool
-#         return ask_utils.is_intent_name("AMAZON.HelpIntent")(handler_input)
-
-#     def handle(self, handler_input):
-#         # type: (HandlerInput) -> Response
-#         speak_output = "You can say hello to me! How can I help?"
-
-#         return (
-#             handler_input.response_builder
-#                 .speak(speak_output)
-#                 .ask(speak_output)
-#                 .response
-#         )
-
-
-# class CancelOrStopIntentHandler(AbstractRequestHandler):
-#     """Single handler for Cancel and Stop Intent."""
-#     def can_handle(self, handler_input):
-#         # type: (HandlerInput) -> bool
-#         return (ask_utils.is_intent_name("AMAZON.CancelIntent")(handler_input) or
-#                 ask_utils.is_intent_name("AMAZON.StopIntent")(handler_input))
-
-#     def handle(self, handler_input):
-#         # type: (HandlerInput) -> Response
-#         speak_output = "Goodbye!"
-
-#         return (
-#             handler_input.response_builder
-#                 .speak(speak_output)
-#                 .response
-#         )
-
-
-# class SessionEndedRequestHandler(AbstractRequestHandler):
-#     """Handler for Session End."""
-#     def can_handle(self, handler_input):
-#         # type: (HandlerInput) -> bool
-#         return ask_utils.is_request_type("SessionEndedRequest")(handler_input)
-
-#     def handle(self, handler_input):
-#         # type: (HandlerInput) -> Response
-
-#         # Any cleanup logic goes here.
-
-#         return handler_input.response_builder.response
-
-
-# class IntentReflectorHandler(AbstractRequestHandler):
-#     """The intent reflector is used for interaction model testing and debugging.
-#     It will simply repeat the intent the user said. You can create custom handlers
-#     for your intents by defining them above, then also adding them to the request
-#     handler chain below.
-#     """
-#     def can_handle(self, handler_input):
-#         # type: (HandlerInput) -> bool
-#         return ask_utils.is_request_type("IntentRequest")(handler_input)
-
-#     def handle(self, handler_input):
-#         # type: (HandlerInput) -> Response
-#         intent_name = ask_utils.get_intent_name(handler_input)
-#         speak_output = "You just triggered " + intent_name + "."
-
-#         return (
-#             handler_input.response_builder
-#                 .speak(speak_output)
-#                 # .ask("add a reprompt if you want to keep the session open for the user to respond")
-#                 .response
-#         )
-
-
-# class CatchAllExceptionHandler(AbstractExceptionHandler):
-#     """Generic error handling to capture any syntax or routing errors. If you receive an error
-#     stating the request handler chain is not found, you have not implemented a handler for
-#     the intent being invoked or included it in the skill builder below.
-#     """
-#     def can_handle(self, handler_input, exception):
-#         # type: (HandlerInput, Exception) -> bool
-#         return True
-
-#     def handle(self, handler_input, exception):
-#         # type: (HandlerInput, Exception) -> Response
-#         logger.error(exception, exc_info=True)
-
-#         speak_output = "Sorry, I had trouble doing what you asked. Please try again."
-
-#         return (
-#             handler_input.response_builder
-#                 .speak(speak_output)
-#                 .ask(speak_output)
-#                 .response
-#         )
-
-# The SkillBuilder object acts as the entry point for your skill, routing all request and response
-# payloads to the handlers above. Make sure any new handlers or interceptors you've
-# defined are included below. The order matters - they're processed top to bottom.
-
-
-# sb = SkillBuilder()
-
-# sb.add_request_handler(LaunchRequestHandler())
-# sb.add_request_handler(HelloWorldIntentHandler())
-# sb.add_request_handler(HelpIntentHandler())
-# sb.add_request_handler(CancelOrStopIntentHandler())
-# sb.add_request_handler(SessionEndedRequestHandler())
-# sb.add_request_handler(IntentReflectorHandler()) # make sure IntentReflectorHandler is last so it doesn't override your custom intent handlers
-
-# sb.add_exception_handler(CatchAllExceptionHandler())
-
-# lambda_handler = sb.lambda_handler()
