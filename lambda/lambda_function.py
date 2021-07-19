@@ -59,9 +59,11 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
         # type: (HandlerInput) -> Response
         api_request = handler_input.request_envelope.request.api_request
 
-        energy = resolveEntity(api_request.slots, "energy")
-        size = resolveEntity(api_request.slots, "size")
-        temperament = resolveEntity(api_request.slots, "temperament")
+        budget = resolveEntity(api_request.slots, "budget")
+        fuel_eff = resolveEntity(api_request.slots, "fuel_eff")
+        reliable = resolveEntity(api_request.slots, "reliable")
+        rugged = resolveEntity(api_request.slots, "rugged")
+        spacious = resolveEntity(api_request.slots, "spacious")
 
         recommendationResult = {}
 
