@@ -75,18 +75,23 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
         
     def find_budget(self, budget):
         # filter for right MSRP 
+        print(budget)
         
     def find_fuel_eff(self, fuel_eff):
         #filter for fuel fuel_eff
+        print(fuel_eff)
     
     def find_reliable(self, reliable):
         #filter for reliable
+        print(reliable)
         
     def find_rugged(self, rugged):
         #filter for rugged
+        print(rugged)
     
     def find_spacious(self, spacious):
         #filter for spacious
+        print(spacious)
         
         
 def buildSuccessApiResponse(returnEntity):
