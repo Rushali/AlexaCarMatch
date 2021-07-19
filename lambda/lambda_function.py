@@ -27,6 +27,42 @@ with open('car_data.json', 'r') as myfile:
 data = json.loads(jsonData)
 
 
+class GetRecommendationAPIHandler(AbstractRequestHandler):
+    def can_handle(self, handler_input):
+        # type: (HandlerInput) -> bool
+        return ask_utils.request_util.get_request_type(handler_input) == 'Dialog.API.Invoked' and handler_input.request_envelope.request.api_request.name == 'getRecommendation'
+
+
+    def handle(self, handler_input):
+        # type: (HandlerInput) -> Response
+        api_request = handler_input.request_envelope.request.api_request
+
+        # energy = resolveEntity(api_request.slots, "energy")
+        # size = resolveEntity(api_request.slots, "size")
+        # temperament = resolveEntity(api_request.slots, "temperament")
+        
+        budget = resolveEntity(api_request.slots, "budget")
+        reliable = resolveEntity(api_request.slots, "reliable")
+        rugged = resolveEntity(api_request.slots, "rugged")
+
+        recommendationResult = {}
+
+        if energy != None and size != None and temperament != None:
+            key = energy + '-' + size + '-' + temperament
+            databaseResponse = data[key]
+
+            print("Response from mock database ", databaseResponse)
+
+            recommendationResult['name'] = databaseResponse['breed']
+            recommendationResult['size'] = api_request.arguments['size']
+            recommendationResult['energy'] = api_request.arguments['energy']
+            recommendationResult['temperament'] = api_request.arguments['temperament']
+
+        response = buildSuccessApiResponse(recommendationResult)
+        
+        return response
+
+
 class LaunchRequestHandler(AbstractRequestHandler):
     """Handler for Skill Launch."""
     def can_handle(self, handler_input):
