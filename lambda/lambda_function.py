@@ -32,9 +32,14 @@ class GetDescriptionAPIHandler(AbstractRequestHandler):
         recommendationResult = arguments['recommendationResult']
         # setting the default response.
         databaseResponse = "I don't know much about " + recommendationResult['name']  + "."
-        energy = recommendationResult['energy']
-        size = recommendationResult['size']
-        temperament = recommendationResult['temperament']
+        # energy = recommendationResult['energy']
+        # size = recommendationResult['size']
+        # temperament = recommendationResult['temperament']
+        budget = recommendationResult['budget']
+        fuel_eff = recommendationResult['fuel_eff']
+        reliable = recommendationResult['reliable']
+        rugged = recommendationResult['rugged']
+        spacious = recommendationResult['spacious']
         
         # setting the actual response if we find a match for their preference
         if energy != None and size != None and temperament != None:
