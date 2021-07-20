@@ -23,7 +23,7 @@ data = json.loads(jsonData)
 class GetDescriptionAPIHandler(AbstractRequestHandler):
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
-        return ask_utils.request_util.get_request_type(handler_input) == 'Dialog.API.Invoked' and handler_input.request_envelope.request.api_request.name == 'getDescription'
+        return ask_utils.request_util.get_request_type(handler_input) == 'Dialog.API.Invoked' and handler_input.request_envelope.request.api_request.name == 'getRecommendation'
 
 
     def handle(self, handler_input):
@@ -73,7 +73,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
         recommendationResult = {}
         recommendationResult['name'] = "optimus prime is the right car for you"
 
-        # if budget != None and size != None and temperament != None:
+        # if budget != None and rugged != None and spacious != None:
         #     key = energy + '-' + size + '-' + temperament
         #     databaseResponse = data[key]
 
