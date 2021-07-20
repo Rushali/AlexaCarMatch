@@ -20,41 +20,6 @@ with open('car_data.json', 'r') as myfile:
 
 data = json.loads(jsonData)
 
-class GetDescriptionAPIHandler(AbstractRequestHandler):
-    def can_handle(self, handler_input):
-        # type: (HandlerInput) -> bool
-        return ask_utils.request_util.get_request_type(handler_input) == 'Dialog.API.Invoked' and handler_input.request_envelope.request.api_request.name == 'getRecommendation'
-
-
-    def handle(self, handler_input):
-        apiRequest = handlerInput.requestEnvelope.request.apiRequest
-        # type: (HandlerInput) -> Response
-        arguments = handler_input.request_envelope.request.api_request.arguments
-        recommendationResult = arguments['recommendationResult']
-        # setting the default response.
-        databaseResponse = "I don't know much about " + recommendationResult['name']  + "."
-        # energy = recommendationResult['energy']
-        # size = recommendationResult['size']
-        # temperament = recommendationResult['temperament']
-        budget = recommendationResult['budget']
-        fuel_eff = recommendationResult['fuel_eff']
-        reliable = recommendationResult['reliable']
-        rugged = recommendationResult['rugged']
-        spacious = recommendationResult['spacious']
-        
-        # setting the actual response if we find a match for their preference
-        # if energy != None and size != None and temperament != None:
-        #     key = energy + '-' + size + '-' + temperament
-        #     databaseResponse = data[key]
-        
-        # descriptionEntity = {
-        #     "description": databaseResponse['description']
-        # }
-        
-        response = buildSuccessApiResponse(descriptionEntity)
-
-        return response
-
 class GetRecommendationAPIHandler(AbstractRequestHandler):
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
