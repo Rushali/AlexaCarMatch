@@ -27,6 +27,7 @@ class GetDescriptionAPIHandler(AbstractRequestHandler):
 
 
     def handle(self, handler_input):
+        apiRequest = handlerInput.requestEnvelope.request.apiRequest
         # type: (HandlerInput) -> Response
         arguments = handler_input.request_envelope.request.api_request.arguments
         recommendationResult = arguments['recommendationResult']
