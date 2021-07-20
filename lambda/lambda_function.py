@@ -29,6 +29,9 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
         api_request = handler_input.request_envelope.request.api_request
+        
+        recommendationResult = {}
+        recommendationResult['name'] = "optimus prime is the right car for you"
 
         budget = resolveEntity(api_request.slots, "budget")
         fuel_eff = resolveEntity(api_request.slots, "fuel_eff")
@@ -36,8 +39,6 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
         rugged = resolveEntity(api_request.slots, "rugged")
         spacious = resolveEntity(api_request.slots, "spacious")
 
-        recommendationResult = {}
-        recommendationResult['name'] = "optimus prime is the right car for you"
         
         print("Response from database is lalalala")
 
