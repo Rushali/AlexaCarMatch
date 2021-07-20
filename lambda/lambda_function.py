@@ -34,7 +34,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
         recommendationResult['name'] = "optimus prime is the right car for you"
 
         budget = resolveEntity(api_request.slots, "budget")
-        fuel_eff = resolveEntity(api_request.slots, "fuel_eff")
+        # fuel_eff = resolveEntity(api_request.slots, "fuel_eff")
         reliable = resolveEntity(api_request.slots, "reliable")
         rugged = resolveEntity(api_request.slots, "rugged")
         spacious = resolveEntity(api_request.slots, "spacious")
