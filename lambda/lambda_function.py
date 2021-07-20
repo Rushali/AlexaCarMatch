@@ -51,7 +51,6 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
         
         return response
 
-
 # Formats JSON for return
 # You can use the private SDK methods like "setApiResponse()", but for this template for now, we just send back
 # the JSON. General request and response JSON format can be found here:
@@ -161,7 +160,6 @@ sb = SkillBuilder()
 
 # register request / intent handlers
 sb.add_request_handler(GetRecommendationAPIHandler())
-sb.add_request_handler(GetDescriptionAPIHandler())
 sb.add_request_handler(SessionEndedRequestHandler())
 sb.add_request_handler(IntentReflectorHandler())
 
