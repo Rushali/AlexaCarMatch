@@ -38,6 +38,8 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
 
         recommendationResult = {}
         recommendationResult['name'] = "optimus prime is the right car for you"
+        
+        print("Response from database is lalalala")
 
         # if budget != None and rugged != None and spacious != None:
         #     key = energy + '-' + size + '-' + temperament
