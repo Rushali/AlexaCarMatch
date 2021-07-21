@@ -51,8 +51,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
                 for car in all_cars:
                     if car['MSRP'] < 20:
                         print(car['Make'], car['Model'])
-            
-        
+
         elif rugged != None:
             print(rugged)
         
@@ -64,7 +63,6 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
             print(reliable)
             
             # databaseResponse = data[key]
-
             # recommendationResult['name'] = "optimus prime is the right car for you"
 
         response = buildSuccessApiResponse(recommendationResult)
