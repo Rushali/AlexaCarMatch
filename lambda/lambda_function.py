@@ -63,6 +63,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
         elif spacious != None:
             #2-9 seats
             seats_needed = int(s) for s in spacious.split() if s.isdigit()
+            filtered_cars = [car for car in filtered_cars if int(car['Passenger Capacity']) == seats_needed]
             print(seats_needed)
         
         elif reliable != None:
@@ -71,6 +72,8 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
             if reliable == 'reliable':
                 print('inside reliable')
                 filtered_cars = [car for car in filtered_cars if int(car['Year']) >= 2019]
+            else:
+                print('not reliable')
                     
             
             # databaseResponse = data[key]
