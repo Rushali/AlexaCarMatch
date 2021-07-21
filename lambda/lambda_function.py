@@ -42,13 +42,23 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
         
         print("Response from database is lalalala")
 
-        # if budget != None and rugged != None and spacious != None:
-        #     key = energy + '-' + size + '-' + temperament
-        #     databaseResponse = data[key]
+        if budget != None:
+            print(budget)
+        
+        elif rugged != None:
+            print(rugged)
+        
+        elif spacious != None:
+            print(spacious)
+        
+        elif reliable != None:
+            print(reliable)
+            # key = energy + '-' + size + '-' + temperament
+            # databaseResponse = data[key]
 
-        #     print("Response from mock database ", databaseResponse)
+            # print("Response from mock database ", databaseResponse)
 
-        #     recommendationResult['name'] = "optimus prime is the right car for you"
+            # recommendationResult['name'] = "optimus prime is the right car for you"
 
         response = buildSuccessApiResponse(recommendationResult)
         
