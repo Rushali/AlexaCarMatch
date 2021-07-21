@@ -32,6 +32,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
         
         recommendationResult = {}
         recommendationResult['name'] = "optimus prime is the right car for you"
+        filtered_cars = []
 
         budget = resolveEntity(api_request.slots, "budget")
         # fuel_eff = resolveEntity(api_request.slots, "fuel_eff")
@@ -44,6 +45,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
 
         if budget != None:
             print(budget)
+            #
         
         elif rugged != None:
             print(rugged)
@@ -52,11 +54,10 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
             print(spacious)
         
         elif reliable != None:
+            #Year (older than 2019 not reliable)
             print(reliable)
-            # key = energy + '-' + size + '-' + temperament
+            
             # databaseResponse = data[key]
-
-            # print("Response from mock database ", databaseResponse)
 
             # recommendationResult['name'] = "optimus prime is the right car for you"
 
