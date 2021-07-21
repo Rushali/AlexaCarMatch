@@ -40,7 +40,6 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
         rugged = resolveEntity(api_request.slots, "rugged")
         spacious = resolveEntity(api_request.slots, "spacious")
 
-        
         print("Response from database is lalalala")
 
         if budget != None:
@@ -59,6 +58,9 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
         elif rugged != None:
             #Body style of truck, SUV && Drivetrain of AWD && horsrpower 350 and above
             print(rugged)
+            if rugged != 'rugged':
+                print('inside not rugged')
+                
         
         elif spacious != None:
             #2-9 seats
