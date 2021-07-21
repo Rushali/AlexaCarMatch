@@ -50,6 +50,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
                 print('inside cheap')
                 for car in all_cars:
                     if int(car['MSRP']) < 20:
+                        filtered_cars.append(car)
                         print(car['Make'], car['Model'])
             else:
                 print('not filtering for budget')
@@ -67,6 +68,10 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
         elif reliable != None:
             #Year (older than 2019 not reliable)
             print(reliable)
+            if reliable == 'reliable':
+                print('inside reliable')
+                for car in filtered_cars:
+                    
             
             # databaseResponse = data[key]
             # recommendationResult['name'] = "optimus prime is the right car for you"
