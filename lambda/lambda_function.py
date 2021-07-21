@@ -56,7 +56,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
                 
 
         elif rugged != None:
-            #Body style of truck, SUV && Drivetrain of AWD && horsrpower
+            #Body style of truck, SUV && Drivetrain of AWD && horsrpower 350 and above
             print(rugged)
         
         elif spacious != None:
