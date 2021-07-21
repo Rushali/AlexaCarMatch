@@ -71,7 +71,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
         
         if spacious != None:
             #2-9 seats
-            seats_needed = int(s) for s in spacious.split() if s.isdigit()
+            seats_needed = [int(s) for s in spacious.split() if s.isdigit()]
             print(seats_needed)
             filtered_cars = [car for car in filtered_cars if int(car['Passenger Capacity']) == seats_needed]
         
