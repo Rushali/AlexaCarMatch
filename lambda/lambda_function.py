@@ -18,7 +18,7 @@ logger.setLevel(logging.INFO)
 with open('car_data.json', 'r') as myfile:
     jsonData = myfile.read()
 
-data = json.loads(jsonData)
+all_cars = json.loads(jsonData)
 
 class GetRecommendationAPIHandler(AbstractRequestHandler):
     def can_handle(self, handler_input):
@@ -44,8 +44,14 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
         print("Response from database is lalalala")
 
         if budget != None:
+            #cheap is below $20k
             print(budget)
-            #
+            if budget == 'cheap':
+                print('inside cheap')
+                for car in all_cars:
+                    if car['MSRP'] < 20:
+                        print(car['Make'], car['Model'])
+            
         
         elif rugged != None:
             print(rugged)
