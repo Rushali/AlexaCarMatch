@@ -64,7 +64,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
                 pring('rugged')
                 filtered_cars = [car for car in filtered_cars if car['Drivetrain'] == 'AWD']
                 filtered_cars = [car for car in filtered_cars if int(car['Horsepower']) >= 350]
-                filtered_cars = [car for car in filtered_cars if car['Body Style'] >= 350]
+                filtered_cars = [car for car in filtered_cars if car['Body Style'] == 'Pickup' or car['Body Style'] == 'SUV']
                 
         
         if spacious != None:
