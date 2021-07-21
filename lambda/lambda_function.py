@@ -45,12 +45,15 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
 
         if budget != None:
             #cheap is below $20k
-            print(budget)
+            # print(budget)
             if budget == 'cheap':
                 print('inside cheap')
                 for car in all_cars:
-                    if car['MSRP'] < 20:
+                    if int(car['MSRP']) < 20:
                         print(car['Make'], car['Model'])
+            else:
+                print('not filtering for budget')
+                
 
         elif rugged != None:
             print(rugged)
