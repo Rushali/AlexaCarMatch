@@ -56,10 +56,13 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
                 
 
         elif rugged != None:
+            #Body style of truck, SUV && Drivetrain of AWD && horsrpower
             print(rugged)
         
         elif spacious != None:
-            print(spacious)
+            #2-9 seats
+            seats_needed = int(s) for s in spacious.split() if s.isdigit()
+            print(seats_needed)
         
         elif reliable != None:
             #Year (older than 2019 not reliable)
