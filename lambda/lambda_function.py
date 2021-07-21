@@ -62,7 +62,8 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
                 print('inside not rugged')
             else:
                 pring('rugged')
-                filtered_cars = [car for car in filtered_cars if int(car['Drivetrain']) == 'AWD']
+                filtered_cars = [car for car in filtered_cars if car['Drivetrain'] == 'AWD']
+                filtered_cars = [car for car in filtered_cars if car['Drivetrain'] == 'AWD']
                 
         
         if spacious != None:
