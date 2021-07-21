@@ -55,20 +55,23 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
                 print('not filtering for budget')
                 
 
-        elif rugged != None:
+        if rugged != None:
             #Body style of truck, SUV && Drivetrain of AWD && horsrpower 350 and above
             print(rugged)
             if rugged != 'rugged':
                 print('inside not rugged')
+            else:
+                pring('rugged')
+                filtered_cars = [car for car in filtered_cars if int(car['Drivetrain']) == 'AWD']
                 
         
-        elif spacious != None:
+        if spacious != None:
             #2-9 seats
             seats_needed = int(s) for s in spacious.split() if s.isdigit()
             print(seats_needed)
             filtered_cars = [car for car in filtered_cars if int(car['Passenger Capacity']) == seats_needed]
         
-        elif reliable != None:
+        if reliable != None:
             #Year (older than 2019 not reliable)
             print(reliable)
             if reliable == 'reliable':
