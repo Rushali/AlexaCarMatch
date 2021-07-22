@@ -18,6 +18,12 @@ logger.setLevel(logging.INFO)
 # read mock data
 with open('car_data.json', 'r') as myfile:
     jsonData = myfile.read()
+    
+# read mock data
+with open('default_cars_data.json', 'r') as myfile:
+    carsjsonData = myfile.read()
+    
+default_cars_data = json.loads(carsjsonData)
 
 all_cars = json.loads(jsonData)
 
