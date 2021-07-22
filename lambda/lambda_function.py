@@ -127,8 +127,8 @@ class SessionEndedRequestHandler(AbstractRequestHandler):
 # Resolves catalog value using Entity Resolution
 def resolveEntity(resolvedEntity, slotName):
     erAuthorityResolution = resolvedEntity[slotName].resolutions.resolutions_per_authority[0]
-    print(resolvedEntity[slotName].resolutions.resolutions_per_authority[0].status.code)
-    print(resolvedEntity[slotName].resolutions.resolutions_per_authority[1].status.code, 'now in one')
+    # print(resolvedEntity[slotName].resolutions.resolutions_per_authority[0].status.code)
+    # print(resolvedEntity[slotName].resolutions.resolutions_per_authority[1].status.code, 'now in one')
     value = None
 
     if erAuthorityResolution.status.code.value == 'ER_SUCCESS_MATCH':
