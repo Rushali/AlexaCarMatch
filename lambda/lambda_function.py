@@ -90,9 +90,9 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
             # always going to be string like four or two seats
             seats_needed = [int(s) for s in spacious.split() if s.isdigit()]
             print(seats_needed)
-            if seats_needed > 0:
-                filtered_cars = [car for car in filtered_cars if int(car['Passenger Capacity']) == seats_needed[0]]
-                print(len(filtered_cars))
+            # if seats_needed > 0:
+            #     filtered_cars = [car for car in filtered_cars if int(car['Passenger Capacity']) == seats_needed[0]]
+            #     print(len(filtered_cars))
         
         if reliable != None and len(filtered_cars) > 0:
             #Year (older than 2019 not reliable)
@@ -106,6 +106,13 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
             
             # databaseResponse = data[key]
             # recommendationResult['name'] = "optimus prime is the right car for you"
+            
+# Dialog 1 - Toyota Corolla 2020
+# Dialog 2 - Toyota Highlander 2019
+# Dialog 3 - Honda Insight 2020
+# Dialog 4 - Subaru Outback 2019
+# Dialog 5 - Jeep Gladiator 2020
+# Dialog 6 - Porsche Cayenne 2020
 
         response = buildSuccessApiResponse(recommendationResult)
         
