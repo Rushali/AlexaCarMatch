@@ -82,7 +82,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
             for car in filtered_cars:
                 if brand == car['Make']:
                     print(car['Make'], "printing car brand")
-                else
+                else:
                     for brand != car['Make':]: #copy of indices
                         car.remove(brand);
         
