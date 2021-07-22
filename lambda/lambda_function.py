@@ -35,7 +35,6 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
         recommendationResult['name'] = "optimus prime is the right car for you"
         filtered_cars = []
 
-        brand = resolveEntity(api_request.slots, "brand")
         budget = resolveEntity(api_request.slots, "budget")
         # revised fuelefficiency to match existing slot type name, feel free to comment out if this still triggers errors
         fuelefficiency = resolveEntity(api_request.slots, "fuelefficiency")
@@ -64,7 +63,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
             elif budget == 'midrange':
                 #midrange is 21k to 79k
                 for car in all_cars:
-                    if not math.isnan(float(car['MSRP'])) and int(float(car['MSRP'])) < 20:
+                    if not math.isnan(float(car['MSRP'])) and int(float(car['MSRP'])) >= 21 and int(float(car['MSRP'])) <= 79:
                         filtered_cars.append(car)
                 print(len(filtered_cars))
                 print('not filtering for budget')
