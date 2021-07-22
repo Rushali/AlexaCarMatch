@@ -54,5 +54,24 @@
   "Model": "Insight",
   "Height": "55",
   "MSRP": "24"
+},
+{
+  "Drivetrain": "AWD",
+  "Doors": "4",
+  "Engine Type": "4",
+  "Make": "Subaru",
+  "Gas Mileage": "25",
+  "Displacement": "25",
+  "Front Wheel Size": "17",
+  "Width": "72",
+  "Length": "189",
+  "Random String": "EXH",
+  "Passenger Capacity": "5",
+  "Year": "2019",
+  "Horsepower": "170",
+  "Body Style": "SUV",
+  "Model": "Outback",
+  "Height": "66",
+  "MSRP": "26"
 }
 ]
