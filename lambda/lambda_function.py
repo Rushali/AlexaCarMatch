@@ -70,7 +70,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
                 filtered_cars = all_cars
                 
 
-        if rugged != None:
+        if rugged != None and len(filtered_cars) > 0:
             #Body style of truck, SUV && Drivetrain of AWD && horsrpower 350 and above
             print(rugged)
             if rugged != 'rugged':
