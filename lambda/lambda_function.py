@@ -70,14 +70,15 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
                 filtered_cars = [car for car in filtered_cars if car['Drivetrain'] == 'AWD']
                 filtered_cars = [car for car in filtered_cars if int(car['Horsepower']) >= 350]
                 filtered_cars = [car for car in filtered_cars if car['Body Style'] == 'Pickup' or car['Body Style'] == 'SUV']
-                
-        
+                print(len(filtered_cars))
+
         if spacious != None:
             #2-9 seats
             seats_needed = [int(s) for s in spacious.split() if s.isdigit()]
             print(seats_needed)
             if seats_needed > 0:
                 filtered_cars = [car for car in filtered_cars if int(car['Passenger Capacity']) == seats_needed[0]]
+                print(len(filtered_cars))
         
         # if reliable != None:
         #     #Year (older than 2019 not reliable)
