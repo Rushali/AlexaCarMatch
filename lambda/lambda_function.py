@@ -67,8 +67,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
                         filtered_cars.append(car)
                 print(len(filtered_cars))
             else:
-                filtered_cars = all_cars;
-                print('not filtering for budget')
+                filtered_cars = all_cars
                 
 
         if rugged != None:
