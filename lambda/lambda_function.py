@@ -126,6 +126,7 @@ class SessionEndedRequestHandler(AbstractRequestHandler):
 # *****************************************************************************
 # Resolves catalog value using Entity Resolution
 def resolveEntity(resolvedEntity, slotName):
+    print(slotName, 'slot name')
     erAuthorityResolution0 = resolvedEntity[slotName].resolutions.resolutions_per_authority[0]
     erAuthorityResolution1 = resolvedEntity[slotName].resolutions.resolutions_per_authority[1]
     # print(resolvedEntity[slotName].resolutions.resolutions_per_authority[0].status.code)
