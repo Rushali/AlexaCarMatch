@@ -36,4 +36,23 @@
   "Height": "68",
   "MSRP": "37"
 },
+{
+  "Drivetrain": "FWD",
+  "Doors": "4",
+  "Engine Type": "4",
+  "Make": "Honda",
+  "Gas Mileage": "55",
+  "Displacement": "15",
+  "Front Wheel Size": "16",
+  "Width": "71",
+  "Length": "183",
+  "Random String": "AVG",
+  "Passenger Capacity": "5",
+  "Year": "2020",
+  "Horsepower": "150",
+  "Body Style": "4dr",
+  "Model": "Insight",
+  "Height": "55",
+  "MSRP": "24"
+}
 ]
