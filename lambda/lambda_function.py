@@ -35,6 +35,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
         recommendationResult['name'] = "optimus prime is the right car for you"
         filtered_cars = []
 
+        brand = resolveEntity(api_request.slots, "brand")
         budget = resolveEntity(api_request.slots, "budget")
         # revised fuelefficiency to match existing slot type name, feel free to comment out if this still triggers errors
         fuelefficiency = resolveEntity(api_request.slots, "fuelefficiency")
