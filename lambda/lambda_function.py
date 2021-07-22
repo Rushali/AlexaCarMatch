@@ -18,12 +18,6 @@ logger.setLevel(logging.INFO)
 # read mock data
 with open('car_data.json', 'r') as myfile:
     jsonData = myfile.read()
-    
-# read mock data
-with open('default_cars_data.json', 'r') as myfile:
-    carsjsonData = myfile.read()
-    
-default_cars_data = json.loads(carsjsonData)
 
 all_cars = json.loads(jsonData)
 
@@ -82,7 +76,6 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
             for car in filtered_cars:
                 if brand == car['Make']:
                     print(car['Make'], "printing car brand")
-                else:
                     for brand != car['Make':]: #copy of indices
                         car.remove(brand);
         
