@@ -85,7 +85,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
                 filtered_cars = [car for car in filtered_cars if car['Body Style'] == 'Pickup' or car['Body Style'] == 'SUV']
                 print(len(filtered_cars))
 
-        if spacious != None:
+        if spacious != None and len(filtered_cars) > 0:
             #2-9 seats
             # always going to be 
             seats_needed = [int(s) for s in spacious.split() if s.isdigit()]
