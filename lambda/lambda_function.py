@@ -132,7 +132,6 @@ def resolveEntity(resolvedEntity, slotName):
             value = erAuthorityResolution.values[0].value.name
         except ValueError:
             print("Oops!  That was no valid value.")
-    else:
         
     return value
 
