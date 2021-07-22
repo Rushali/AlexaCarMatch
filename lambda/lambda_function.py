@@ -132,7 +132,7 @@ def resolveEntity(resolvedEntity, slotName):
     # print(resolvedEntity[slotName].resolutions.resolutions_per_authority[1].status.code, 'now in one')
     value = None
 
-    if erAuthorityResolution.status.code.value == 'ER_SUCCESS_MATCH':
+    if erAuthorityResolution0.status.code.value == 'ER_SUCCESS_MATCH':
         try:
             value = erAuthorityResolution.values[0].value.name
         except ValueError:
