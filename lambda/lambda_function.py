@@ -18,8 +18,12 @@ logger.setLevel(logging.INFO)
 # read mock data
 with open('car_data.json', 'r') as myfile:
     jsonData = myfile.read()
+    
+with open('default_cars_data.json', 'r') as myfile:
+    defaultcarsjsonData = myfile.read()
 
 all_cars = json.loads(jsonData)
+default_cars = json.loads(defaultcarsjsonData)
 
 class GetRecommendationAPIHandler(AbstractRequestHandler):
     def can_handle(self, handler_input):
@@ -35,7 +39,6 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
         recommendationResult['name'] = "optimus prime is the right car for you"
         filtered_cars = []
 
-        brand = resolveEntity(api_request.slots, "brand")
         budget = resolveEntity(api_request.slots, "budget")
         # revised fuelefficiency to match existing slot type name, feel free to comment out if this still triggers errors
         fuelefficiency = resolveEntity(api_request.slots, "fuelefficiency")
@@ -57,31 +60,21 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
             elif budget == 'luxury':
                 #luxury is above $80k
                 for car in all_cars:
-                    if not math.isnan(float(car['MSRP'])) and int(float(car['MSRP'])) < 20:
+                    if not math.isnan(float(car['MSRP'])) and int(float(car['MSRP'])) > 80:
                         filtered_cars.append(car)
                 print(len(filtered_cars))
                 print('not filtering for budget')
             elif budget == 'midrange':
                 #midrange is 21k to 79k
                 for car in all_cars:
-                    if not math.isnan(float(car['MSRP'])) and int(float(car['MSRP'])) < 20:
+                    if not math.isnan(float(car['MSRP'])) and int(float(car['MSRP'])) >= 21 and int(float(car['MSRP'])) <= 79:
                         filtered_cars.append(car)
                 print(len(filtered_cars))
-                print('not filtering for budget')
-        
-        onlyBrand = []
-        
-        if brand != None:
-            print(brand)
-            for car in filtered_cars:
-                if brand == car['Make']:
-                    print(car['Make'], "printing car brand")
-                    for brand != car['Make':]: #copy of indices
-                        car.remove();
-        
-        
+            else:
+                filtered_cars = all_cars
+                
 
-        if rugged != None:
+        if rugged != None and len(filtered_cars) > 0:
             #Body style of truck, SUV && Drivetrain of AWD && horsrpower 350 and above
             print(rugged)
             if rugged != 'rugged':
@@ -96,23 +89,23 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
                 filtered_cars = [car for car in filtered_cars if car['Body Style'] == 'Pickup' or car['Body Style'] == 'SUV']
                 print(len(filtered_cars))
 
-        if spacious != None:
+        if spacious != None and len(filtered_cars) > 0:
             #2-9 seats
-            # always going to be 
+            # always going to be string like four or two seats
             seats_needed = [int(s) for s in spacious.split() if s.isdigit()]
             print(seats_needed)
-            if seats_needed > 0:
-                filtered_cars = [car for car in filtered_cars if int(car['Passenger Capacity']) == seats_needed[0]]
-                print(len(filtered_cars))
+            # if seats_needed > 0:
+            #     filtered_cars = [car for car in filtered_cars if int(car['Passenger Capacity']) == seats_needed[0]]
+            #     print(len(filtered_cars))
         
-        # if reliable != None:
-        #     #Year (older than 2019 not reliable)
-        #     print(reliable)
-        #     if reliable == 'reliable':
-        #         print('inside reliable')
-        #         filtered_cars = [car for car in filtered_cars if int(car['Year']) >= 2019]
-        #     else:
-        #         print('not reliable')
+        if reliable != None and len(filtered_cars) > 0:
+            #Year (older than 2019 not reliable)
+            print(reliable)
+            if reliable == 'reliable':
+                print('inside reliable')
+                filtered_cars = [car for car in filtered_cars if int(car['Year']) >= 2019]
+            else:
+                print('not reliable')
                     
             
             # databaseResponse = data[key]
