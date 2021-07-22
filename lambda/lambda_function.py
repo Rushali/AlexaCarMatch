@@ -48,7 +48,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
             #cheap is below $20k
             # print(budget)
             if budget == 'cheap':
-                print('inside cheap')
+                # print('inside cheap')
                 for car in all_cars:
                     if not math.isnan(float(car['MSRP'])) and int(float(car['MSRP'])) < 20:
                         print(car['MSRP'])
