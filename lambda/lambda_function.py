@@ -87,7 +87,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
 
         if spacious != None and len(filtered_cars) > 0:
             #2-9 seats
-            # always going to be 
+            # always going to be string like four or two seats
             seats_needed = [int(s) for s in spacious.split() if s.isdigit()]
             print(seats_needed)
             if seats_needed > 0:
