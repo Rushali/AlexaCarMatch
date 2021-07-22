@@ -69,15 +69,15 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
                 print(len(filtered_cars))
                 print('not filtering for budget')
         
-        onlyBrand = []
+        # onlyBrand = []
         
-        if brand != None:
-            print(brand)
-            for car in filtered_cars:
-                if brand == car['Make']:
-                    print(car['Make'], "printing car brand")
-                    for brand != car['Make':]: #copy of indices
-                        car.remove(brand);
+        # if brand != None:
+        #     print(brand)
+        #     for car in filtered_cars:
+        #         if brand == car['Make']:
+        #             print(car['Make'], "printing car brand")
+        #             for brand != car['Make':]: #copy of indices
+        #                 car.remove(brand)
         
         
 
