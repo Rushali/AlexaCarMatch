@@ -56,7 +56,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
             elif budget == 'luxury':
                 #luxury is above $80k
                 for car in all_cars:
-                    if not math.isnan(float(car['MSRP'])) and int(float(car['MSRP'])) < 20:
+                    if not math.isnan(float(car['MSRP'])) and int(float(car['MSRP'])) > 80:
                         filtered_cars.append(car)
                 print(len(filtered_cars))
                 print('not filtering for budget')
