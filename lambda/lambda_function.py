@@ -20,9 +20,10 @@ with open('car_data.json', 'r') as myfile:
     jsonData = myfile.read()
     
 with open('default_cars_data.json', 'r') as myfile:
-    default_cars = myfile.read()
+    defaultcarsjsonData = myfile.read()
 
 all_cars = json.loads(jsonData)
+default_cars = 
 
 class GetRecommendationAPIHandler(AbstractRequestHandler):
     def can_handle(self, handler_input):
