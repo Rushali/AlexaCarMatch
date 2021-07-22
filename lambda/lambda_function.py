@@ -142,7 +142,7 @@ def resolveEntity(resolvedEntity, slotName):
             value = erAuthorityResolution1.values[0].value.name
         except ValueError:
             print("Oops!  That was no valid value.")
-    print(value)   
+    print(value)
     return value
 
 # The intent reflector is used for interaction model testing and debugging.
