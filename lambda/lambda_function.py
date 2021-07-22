@@ -53,7 +53,19 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
                     if not math.isnan(float(car['MSRP'])) and int(float(car['MSRP'])) < 20:
                         filtered_cars.append(car)
                 print(len(filtered_cars))
-            else:
+            elif budget == 'luxury':
+                #luxury is above $80k
+                for car in all_cars:
+                    if not math.isnan(float(car['MSRP'])) and int(float(car['MSRP'])) < 20:
+                        filtered_cars.append(car)
+                print(len(filtered_cars))
+                print('not filtering for budget')
+            elif budget == 'midrange':
+                #midrange is 21k to 79k
+                for car in all_cars:
+                    if not math.isnan(float(car['MSRP'])) and int(float(car['MSRP'])) < 20:
+                        filtered_cars.append(car)
+                print(len(filtered_cars))
                 print('not filtering for budget')
                 
 
