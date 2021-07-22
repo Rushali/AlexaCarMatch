@@ -124,11 +124,16 @@ class SessionEndedRequestHandler(AbstractRequestHandler):
 def resolveEntity(resolvedEntity, slotName):
     erAuthorityResolution = resolvedEntity[slotName].resolutions.resolutions_per_authority[0]
     print(resolvedEntity[slotName].resolutions.resolutions_per_authority[0].status.code)
+    print(resolvedEntity[slotName].resolutions.resolutions_per_authority[1].status.code, 'now in one')
     value = None
 
     if erAuthorityResolution.status.code.value == 'ER_SUCCESS_MATCH':
-        value = erAuthorityResolution.values[0].value.name
-
+        try:
+            value = erAuthorityResolution.values[0].value.name
+        except ValueError:
+            print("Oops!  That was no valid value.")
+    else:
+        
     return value
 
 # The intent reflector is used for interaction model testing and debugging.
