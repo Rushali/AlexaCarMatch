@@ -51,7 +51,6 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
                 # print('inside cheap')
                 for car in all_cars:
                     if not math.isnan(float(car['MSRP'])) and int(float(car['MSRP'])) < 20:
-                        print(car['MSRP'])
                         filtered_cars.append(car)
             else:
                 print('not filtering for budget')
