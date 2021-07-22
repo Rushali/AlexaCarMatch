@@ -74,6 +74,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
 
         if spacious != None:
             #2-9 seats
+            # always going to be 
             seats_needed = [int(s) for s in spacious.split() if s.isdigit()]
             print(seats_needed)
             if seats_needed > 0:
@@ -135,7 +136,7 @@ def resolveEntity(resolvedEntity, slotName):
             value = erAuthorityResolution.values[0].value.name
         except ValueError:
             print("Oops!  That was no valid value.")
-        
+    print(value)   
     return value
 
 # The intent reflector is used for interaction model testing and debugging.
