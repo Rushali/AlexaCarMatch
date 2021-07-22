@@ -36,7 +36,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
         filtered_cars = []
 
         budget = resolveEntity(api_request.slots, "budget")
-        # fuel_eff = resolveEntity(api_request.slots, "fuel_eff")
+        fuelefficiency = resolveEntity(api_request.slots, "fuelefficiency")
         reliable = resolveEntity(api_request.slots, "reliable")
         rugged = resolveEntity(api_request.slots, "rugged")
         spacious = resolveEntity(api_request.slots, "spacious")
