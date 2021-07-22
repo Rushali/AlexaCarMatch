@@ -37,8 +37,8 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
 
         budget = resolveEntity(api_request.slots, "budget")
         # revised fuelefficiency to match existing slot type name, feel free to comment out if this still triggers errors
-        # fuelefficiency = resolveEntity(api_request.slots, "fuelefficiency")
-        # reliable = resolveEntity(api_request.slots, "reliable") <-- also erroring 
+        fuelefficiency = resolveEntity(api_request.slots, "fuelefficiency")
+        reliable = resolveEntity(api_request.slots, "reliable")
         rugged = resolveEntity(api_request.slots, "rugged")
         spacious = resolveEntity(api_request.slots, "spacious")
 
@@ -123,6 +123,7 @@ class SessionEndedRequestHandler(AbstractRequestHandler):
 # Resolves catalog value using Entity Resolution
 def resolveEntity(resolvedEntity, slotName):
     erAuthorityResolution = resolvedEntity[slotName].resolutions.resolutions_per_authority[0]
+    print(resolvedEntity[slotName].resolutions.resolutions_per_authority[0].status.code)
     value = None
 
     if erAuthorityResolution.status.code.value == 'ER_SUCCESS_MATCH':
