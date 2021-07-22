@@ -137,6 +137,11 @@ def resolveEntity(resolvedEntity, slotName):
             value = erAuthorityResolution.values[0].value.name
         except ValueError:
             print("Oops!  That was no valid value.")
+    elif erAuthorityResolution1.status.code.value == 'ER_SUCCESS_MATCH':
+        try:
+            value = erAuthorityResolution.values[0].value.name
+        except ValueError:
+            print("Oops!  That was no valid value.")
     print(value)   
     return value
 
