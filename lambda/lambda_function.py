@@ -150,21 +150,12 @@ class SessionEndedRequestHandler(AbstractRequestHandler):
 # *****************************************************************************
 # Resolves catalog value using Entity Resolution
 def resolveEntity(resolvedEntity, slotName):
-    try:
-        erAuthorityResolution0 = resolvedEntity[slotName].resolutions.resolutions_per_authority[0]
-        erAuthorityResolution1 = resolvedEntity[slotName].resolutions.resolutions_per_authority[1]
-    # print(resolvedEntity[slotName].resolutions.resolutions_per_authority[0].status.code)
-    # print(resolvedEntity[slotName].resolutions.resolutions_per_authority[1].status.code, 'now in one')
-        value = None
+    erAuthorityResolution = resolvedEntity[slotName].resolutions.resolutions_per_authority[0]
+    value = None
 
-    if erAuthorityResolution0.status.code.value == 'ER_SUCCESS_MATCH':
+    if erAuthorityResolution.status.code.value == 'ER_SUCCESS_MATCH':
         try:
-            value = erAuthorityResolution0.values[0].value.name
-        except ValueError:
-            print("Oops!  That was no valid value.")
-    elif erAuthorityResolution1.status.code.value == 'ER_SUCCESS_MATCH':
-        try:
-            value = erAuthorityResolution1.values[0].value.name
+            value = erAuthorityResolution.values[0].value.name
         except ValueError:
             print("Oops!  That was no valid value.")
     print(value)
