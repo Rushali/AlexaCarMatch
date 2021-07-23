@@ -44,7 +44,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
         spacious = resolveEntity(api_request.slots, "spacious")
 
         if budget != None:
-            # print(budget)
+            # print(budget, 'budget')
             if budget == 'cheap':
                 #cheap is below $20k
                 # print('inside cheap')
