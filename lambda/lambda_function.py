@@ -116,6 +116,8 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
             elif reliable != 'reliable' and len(filtered_cars) > 0:
                 filtered_cars = [car for car in filtered_cars if int(car['Year']) < 2019]
                 print(len(filtered_cars), 'after filtering by cars older than 2019')
+            else:
+                print('filtered_cars might be zero')
 
         recommendationResult['name'] = "optimus prime is the right car for you"
 
