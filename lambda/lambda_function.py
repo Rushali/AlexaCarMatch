@@ -104,7 +104,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
                     print(seats_needed)
                     if seats_needed > 0:
                         filtered_cars = [car for car in filtered_cars if int(car['Passenger Capacity']) == seats_needed]
-                        print(len(filtered_cars))
+            print(len(filtered_cars), 'filtered by spacious seats needed were', seats_needed)
         
         # if reliable != None:
         #     #Year (older than 2019 not reliable)
