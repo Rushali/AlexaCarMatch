@@ -110,9 +110,10 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
             if reliable == 'reliable':
                 print('inside reliable')
                 filtered_cars = [car for car in filtered_cars if int(car['Year']) >= 2019]
+                print(len(filtered_cars), 'after filtering by cars year 2019 and recent')
             else:
                 filtered_cars = [car for car in filtered_cars if int(car['Year']) < 2019]
-                print('not reliable')
+                print(len(filtered_cars), 'after filtering by cars older than 2019')
                     
             
             # databaseResponse = data[key]
