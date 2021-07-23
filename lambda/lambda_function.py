@@ -37,24 +37,22 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
 
         brand = resolveEntity(api_request.slots, "brand")
         budget = resolveEntity(api_request.slots, "budget")
-        # revised fuelefficiency to match existing slot type name, feel free to comment out if this still triggers errors
         fuelefficiency = resolveEntity(api_request.slots, "fuelefficiency")
         reliable = resolveEntity(api_request.slots, "reliable")
         rugged = resolveEntity(api_request.slots, "rugged")
         spacious = resolveEntity(api_request.slots, "spacious")
 
-        print("Response from database is lalalala")
-
         if budget != None:
-            #cheap is below $20k
             # print(budget)
             if budget == 'cheap':
+                #cheap is below $20k
                 # print('inside cheap')
                 for car in all_cars:
                     if not math.isnan(float(car['MSRP'])) and int(float(car['MSRP'])) < 20:
                         filtered_cars.append(car)
                 print(len(filtered_cars))
             elif budget == 'luxury':
+                # print('inside luxury')
                 #luxury is above $80k
                 for car in all_cars:
                     if not math.isnan(float(car['MSRP'])) and int(float(car['MSRP'])) < 20:
