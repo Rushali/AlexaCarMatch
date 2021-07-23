@@ -80,12 +80,12 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
         if rugged != None:
             #Body style of truck, SUV && Drivetrain of AWD && horsrpower 350 and above
             print(rugged, 'printing value of rugged')
-            if rugged != 'rugged':
+            if rugged != 'rugged' and len(filtered_cars) > 0:
                 print('inside not rugged')
                 filtered_cars = [car for car in filtered_cars if car['Drivetrain'] == 'RWD' or car['Drivetrain'] == 'FWD']
                 filtered_cars = [car for car in filtered_cars if int(car['Horsepower']) < 350]
                 print(len(filtered_cars), 'after filtering by not rugged')
-            else:
+            elif rugged == 'rugged' and len(filtered_cars) > 0:
                 print('inside rugged')
                 filtered_cars = [car for car in filtered_cars if car['Drivetrain'] == 'AWD']
                 filtered_cars = [car for car in filtered_cars if int(car['Horsepower']) >= 350]
