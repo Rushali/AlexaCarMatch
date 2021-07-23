@@ -69,13 +69,15 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
                 print(len(filtered_cars))
                 print('not filtering for budget')
         
+        # onlyBrand = []
+        
         # if brand != None:
         #     print(brand)
         #     for car in filtered_cars:
         #         if brand == car['Make']:
         #             print(car['Make'], "printing car brand")
-        #         else:
-        #             car.remove(brand)
+        #             for brand != car['Make':]: #copy of indices
+        #                 car.remove(brand)
         
         
 
@@ -86,7 +88,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
                 print('inside not rugged')
                 filtered_cars = [car for car in filtered_cars if car['Drivetrain'] == 'RWD' or car['Drivetrain'] == 'FWD']
                 filtered_cars = [car for car in filtered_cars if int(car['Horsepower']) < 350]
-                print(len(filtered_cars))
+                print(len(filtered_cars)) #add what it is rushali wtf
             else:
                 pring('rugged')
                 filtered_cars = [car for car in filtered_cars if car['Drivetrain'] == 'AWD']
