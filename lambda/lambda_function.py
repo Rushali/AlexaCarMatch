@@ -102,7 +102,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
                 if string_number in spacious:
                     seats_needed = w2n.word_to_num(string_number)
                     print(seats_needed)
-                    if seats_needed > 0:
+                    if seats_needed > 0 and len(filtered_cars) > 0:
                         filtered_cars = [car for car in filtered_cars if int(car['Passenger Capacity']) == seats_needed]
             print(len(filtered_cars), 'filtered by spacious seats needed were', seats_needed)
         
