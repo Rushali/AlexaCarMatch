@@ -106,7 +106,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
         
         if reliable != None:
             #Year (older than 2019 not reliable)
-            print(reliable)
+            print(reliable, 'reliable slot type')
             if reliable == 'reliable':
                 print('inside reliable')
                 filtered_cars = [car for car in filtered_cars if int(car['Year']) >= 2019]
