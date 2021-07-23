@@ -96,7 +96,6 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
 
         if spacious != None:
             #2-9 seats
-            # always going to be 
             text_numbers = ['two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
             seats_needed = [int(s) for s in spacious.split() if s.isdigit()]
             print(seats_needed)
