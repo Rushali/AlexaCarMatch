@@ -101,6 +101,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
             for string_number in text_numbers:
                 if string_number in spacious:
                     
+                    
             seats_needed = [int(s) for s in spacious.split() if s.isdigit()]
             print(seats_needed)
             if seats_needed > 0:
