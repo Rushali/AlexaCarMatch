@@ -134,6 +134,9 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
 
 
         recommendationResult['name'] = "optimus prime is the right car for you"
+        recommendationResult['budget'] = "12k"
+        recommendationResult['brand'] = "BMW"
+        recommendationResult['url'] = "image.com/image"
 
         response = buildSuccessApiResponse(recommendationResult)
         
