@@ -114,9 +114,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
             else:
                 filtered_cars = [car for car in filtered_cars if int(car['Year']) < 2019]
                 print(len(filtered_cars), 'after filtering by cars older than 2019')
-                    
-            
-            # databaseResponse = data[key]
+
         recommendationResult['name'] = "optimus prime is the right car for you"
 
         response = buildSuccessApiResponse(recommendationResult)
