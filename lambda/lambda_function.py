@@ -100,7 +100,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
             text_numbers = ['two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
             for string_number in text_numbers:
                 if string_number in spacious:
-                    w2n.word_to_num(string_number)
+                    print(w2n.word_to_num(string_number))
                     
             seats_needed = [int(s) for s in spacious.split() if s.isdigit()]
             print(seats_needed)
