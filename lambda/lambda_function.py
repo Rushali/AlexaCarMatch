@@ -121,7 +121,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
                 
         if fuelefficiency != None:
             #Gas Mileage above 30 is efficient
-            
+            print(fuelefficiency, 'fuelefficiency slot type')
 
 
         recommendationResult['name'] = "optimus prime is the right car for you"
