@@ -84,13 +84,13 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
                 print('inside not rugged')
                 filtered_cars = [car for car in filtered_cars if car['Drivetrain'] == 'RWD' or car['Drivetrain'] == 'FWD']
                 filtered_cars = [car for car in filtered_cars if int(car['Horsepower']) < 350]
-                print(len(filtered_cars)) #add what it is rushali wtf
+                print(len(filtered_cars), 'after filtering by not rugged')
             else:
                 print('inside rugged')
                 filtered_cars = [car for car in filtered_cars if car['Drivetrain'] == 'AWD']
                 filtered_cars = [car for car in filtered_cars if int(car['Horsepower']) >= 350]
                 filtered_cars = [car for car in filtered_cars if car['Body Style'] == 'Pickup' or car['Body Style'] == 'SUV']
-                print(len(filtered_cars))
+                print(len(filtered_cars), 'after filtering by rugged')
 
         if spacious != None:
             #2-9 seats
