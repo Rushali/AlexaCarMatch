@@ -2,6 +2,7 @@ import logging
 import json
 import ask_sdk_core.utils as ask_utils
 import math
+from word2number import w2n
 
 from ask_sdk_core.skill_builder import SkillBuilder
 from ask_sdk_core.dispatch_components import AbstractRequestHandler
@@ -97,6 +98,9 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
         if spacious != None:
             #2-9 seats
             text_numbers = ['two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+            for string_number in text_numbers:
+                if string_number in spacious:
+                    
             seats_needed = [int(s) for s in spacious.split() if s.isdigit()]
             print(seats_needed)
             if seats_needed > 0:
