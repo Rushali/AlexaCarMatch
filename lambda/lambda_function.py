@@ -72,8 +72,9 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
         
         if brand != None:
             print(brand)
-            for car in filtered_cars:
-                if car['Make'].lower() != brand.lower():
+            if len(filtered_cars) > 0:
+                for car in filtered_cars:
+                    if car['Make'].lower() != brand.lower():
                     
         
         
