@@ -63,7 +63,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
                 #print('inside midrange')
                 #midrange is 21k to 79k
                 for car in all_cars:
-                    if not math.isnan(float(car['MSRP'])) and int(float(car['MSRP'])) < 20:
+                    if not math.isnan(float(car['MSRP'])) and int(float(car['MSRP'])) >= 21 and int(float(car['MSRP'])) < 79:
                         filtered_cars.append(car)
                 print(len(filtered_cars))
                 print('not filtering for budget')
