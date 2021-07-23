@@ -118,6 +118,11 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
                 print(len(filtered_cars), 'after filtering by cars older than 2019')
             else:
                 print('filtered_cars might be zero')
+                
+        if fuelefficiency != None:
+            #Gas Mileage above 30 is efficient
+            
+
 
         recommendationResult['name'] = "optimus prime is the right car for you"
 
