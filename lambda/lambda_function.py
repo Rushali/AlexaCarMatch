@@ -111,6 +111,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
                 print('inside reliable')
                 filtered_cars = [car for car in filtered_cars if int(car['Year']) >= 2019]
             else:
+                filtered_cars = [car for car in filtered_cars if int(car['Year']) < 2019]
                 print('not reliable')
                     
             
