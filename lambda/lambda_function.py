@@ -91,6 +91,8 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
                 filtered_cars = [car for car in filtered_cars if int(car['Horsepower']) >= 350]
                 filtered_cars = [car for car in filtered_cars if car['Body Style'] == 'Pickup' or car['Body Style'] == 'SUV']
                 print(len(filtered_cars), 'after filtering by rugged')
+            else:
+                print('filtered_cars might be zero')
 
         if spacious != None:
             #2-9 seats
