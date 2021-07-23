@@ -117,7 +117,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
                     
             
             # databaseResponse = data[key]
-            # recommendationResult['name'] = "optimus prime is the right car for you"
+        recommendationResult['name'] = "optimus prime is the right car for you"
 
         response = buildSuccessApiResponse(recommendationResult)
         
