@@ -75,6 +75,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
             if len(filtered_cars) > 0:
                 for car in filtered_cars:
                     if car['Make'].lower() != brand.lower():
+                        filtered_cars = filtered_cars.remove(car)
                     
         
         
