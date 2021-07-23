@@ -102,9 +102,9 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
                 if string_number in spacious:
                     seats_needed = w2n.word_to_num(string_number)
                     print(seats_needed)
-            if seats_needed > 0:
-                filtered_cars = [car for car in filtered_cars if int(car['Passenger Capacity']) == seats_needed[0]]
-                print(len(filtered_cars))
+                    if seats_needed > 0:
+                        filtered_cars = [car for car in filtered_cars if int(car['Passenger Capacity']) == seats_needed[0]]
+                        print(len(filtered_cars))
         
         # if reliable != None:
         #     #Year (older than 2019 not reliable)
