@@ -78,8 +78,6 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
                         filtered_cars = filtered_cars.remove(car)
                 print(len(filtered_cars), 'after brand filtering')
                     
-        
-        
 
         if rugged != None:
             #Body style of truck, SUV && Drivetrain of AWD && horsrpower 350 and above
