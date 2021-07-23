@@ -106,14 +106,14 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
                         filtered_cars = [car for car in filtered_cars if int(car['Passenger Capacity']) == seats_needed]
             print(len(filtered_cars), 'filtered by spacious seats needed were', seats_needed)
         
-        # if reliable != None:
-        #     #Year (older than 2019 not reliable)
-        #     print(reliable)
-        #     if reliable == 'reliable':
-        #         print('inside reliable')
-        #         filtered_cars = [car for car in filtered_cars if int(car['Year']) >= 2019]
-        #     else:
-        #         print('not reliable')
+        if reliable != None:
+            #Year (older than 2019 not reliable)
+            print(reliable)
+            if reliable == 'reliable':
+                print('inside reliable')
+                filtered_cars = [car for car in filtered_cars if int(car['Year']) >= 2019]
+            else:
+                print('not reliable')
                     
             
             # databaseResponse = data[key]
