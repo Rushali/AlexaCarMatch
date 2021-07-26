@@ -135,6 +135,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
                 print('did not filter by gas Mileage')
         
         if len(filtered_cars) == 0:
+            #return some default cars if filtered cars array is empty
             filtered_cars = default_cars
 
 
