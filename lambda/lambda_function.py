@@ -38,7 +38,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
         api_request = handler_input.request_envelope.request.api_request
         
         recommendationResult = {}
-        recommendationResult['name'] = "optimus prime is the right car for you"
+        # recommendationResult['name'] = "optimus prime is the right car for you"
         filtered_cars = []
 
         brand = resolveEntity(api_request.slots, "brand")
