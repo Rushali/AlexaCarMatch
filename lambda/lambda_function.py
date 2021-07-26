@@ -119,13 +119,6 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
             else:
                 print('filtered_cars might be zero')
                 
-                
-        # Call get image for all 18 cars
-        # return array of [urls of images]
-        # call APL 
-        # and return url for image and pass cars' data
-        #
-                
         if fuelefficiency != None:
             #Gas Mileage above 30 is efficient
             print(fuelefficiency, 'fuelefficiency slot type')
