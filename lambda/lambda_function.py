@@ -23,7 +23,7 @@ with open('car_data.json', 'r') as myfile:
 all_cars = json.loads(jsonData
 
 with open('default_cars_data.json', 'r') as myfile:
-    jsonData = myfile.read()
+    carsjsonData = myfile.read()
 
 all_cars = json.loads(jsonData)
 
