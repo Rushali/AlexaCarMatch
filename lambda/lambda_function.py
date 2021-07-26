@@ -126,17 +126,17 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
         # and return url for image and pass cars' data
         #
                 
-        # if fuelefficiency != None:
-        #     #Gas Mileage above 30 is efficient
-        #     print(fuelefficiency, 'fuelefficiency slot type')
-        #     if fuelefficiency == 'fuel efficient' and len(filtered_cars) > 0:
-                
+        if fuelefficiency != None:
+            #Gas Mileage above 30 is efficient
+            print(fuelefficiency, 'fuelefficiency slot type')
+            if fuelefficiency == 'fuel efficient' and len(filtered_cars) > 0:
+                filtered_cars = [car for car in filtered_cars if int(car['Gas Mileage']) >= 30]
 
 
         recommendationResult['name'] = "optimus prime is the right car for you"
-        recommendationResult['budget'] = "12k"
-        recommendationResult['brand'] = "BMW"
-        recommendationResult['url'] = "image.com/image"
+        # recommendationResult['budget'] = "12k"
+        # recommendationResult['brand'] = "BMW"
+        # recommendationResult['url'] = "image.com/image"
 
         response = buildSuccessApiResponse(recommendationResult)
         
