@@ -154,7 +154,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
         # recommendationResult['brand'] = "BMW"
         # recommendationResult['url'] = "image.com/image"
 
-        response = buildSuccessApiResponse(recommendationResults)
+        response = buildSuccessApiResponse(recommendationResult)
         
         return response
 
