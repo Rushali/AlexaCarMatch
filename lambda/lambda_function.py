@@ -20,7 +20,7 @@ logger.setLevel(logging.INFO)
 with open('car_data.json', 'r') as myfile:
     jsonData = myfile.read()
 
-all_cars = json.loads(jsonData
+all_cars = json.loads(jsonData)
 
 with open('default_cars_data.json', 'r') as myfile:
     carsjsonData = myfile.read()
