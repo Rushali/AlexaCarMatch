@@ -145,6 +145,8 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
         #         'highTemperature': weather['highTemperature']
         #     }
         # }
+        
+        recommendationResults = []
 
         recommendationResult['name'] = "Toyota Corolla 2020"
         # recommendationResult['budget'] = "12k"
