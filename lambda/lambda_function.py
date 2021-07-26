@@ -148,7 +148,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
         
         recommendationResults = []
         recommendationResults = default_cars
-
+        print(filtered_cars)
         recommendationResult['name'] = "Toyota Corolla 2020"
         # recommendationResult['budget'] = "12k"
         # recommendationResult['brand'] = "BMW"
