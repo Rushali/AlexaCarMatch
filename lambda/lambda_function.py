@@ -133,6 +133,9 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
                 filtered_cars = [car for car in filtered_cars if int(car['Gas Mileage']) < 30]
             else:
                 print('did not filter by gas Mileage')
+        
+        if len(filtered_cars) == 0:
+            filtered_cars = default_cars
 
 
         recommendationResult['name'] = "optimus prime is the right car for you"
