@@ -147,6 +147,7 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
         # }
         
         recommendationResults = []
+        recommendationResults = default_cars
 
         recommendationResult['name'] = "Toyota Corolla 2020"
         # recommendationResult['budget'] = "12k"
