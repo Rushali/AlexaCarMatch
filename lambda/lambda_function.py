@@ -137,6 +137,14 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
         if len(filtered_cars) == 0:
             #return some default cars if filtered cars array is empty
             filtered_cars = default_cars
+            
+        # response = {
+        #     'apiResponse': {
+        #         'cityName': cityNameWithId.name,
+        #         'lowTemperature': weather['lowTemperature'],
+        #         'highTemperature': weather['highTemperature']
+        #     }
+        # }
 
         recommendationResult['name'] = "Toyota Corolla 2020"
         # recommendationResult['budget'] = "12k"
