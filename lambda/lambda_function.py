@@ -138,7 +138,6 @@ class GetRecommendationAPIHandler(AbstractRequestHandler):
             #return some default cars if filtered cars array is empty
             filtered_cars = default_cars
 
-
         recommendationResult['name'] = "optimus prime is the right car for you"
         # recommendationResult['budget'] = "12k"
         # recommendationResult['brand'] = "BMW"
