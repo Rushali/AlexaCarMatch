@@ -1,0 +1,1385 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "car guide",
+      "intents": [
+        {
+          "name": "AMAZON.RepeatIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "HelloWorldIntent",
+          "slots": [],
+          "samples": [
+            "hello",
+            "how are you",
+            "oh hi there",
+            "say hi",
+            "hi",
+            "hello there",
+            "greetings"
+          ]
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "bmw",
+          "slots": [],
+          "samples": [
+            "Yes I would like to filter based on bmw",
+            "I like bmw",
+            "bmw"
+          ]
+        },
+        {
+          "name": "audi",
+          "slots": [],
+          "samples": [
+            "I like audi",
+            "Yes I would like to filter based on audi",
+            "audi"
+          ]
+        },
+        {
+          "name": "toyota",
+          "slots": [],
+          "samples": [
+            "i like toyota",
+            "toyota",
+            "Yes I would like to filter based on toyota"
+          ]
+        },
+        {
+          "name": "AMAZON.YesIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NoIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.PauseIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.ResumeIntent",
+          "samples": []
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "spacious",
+                "synonyms": [
+                  "at least",
+                  "plenty of space",
+                  "expansive",
+                  "roomy",
+                  "big",
+                  "generous",
+                  "big enough",
+                  "baseball",
+                  "football",
+                  "hobby",
+                  "basketball",
+                  "sport",
+                  "soccer practice",
+                  "9",
+                  "8",
+                  "7",
+                  "6",
+                  "5",
+                  "4",
+                  "4 people",
+                  "4 seats",
+                  "5 people",
+                  "5 seats",
+                  "6 people",
+                  "6 seats",
+                  "7 people",
+                  "7 seats",
+                  "8 people",
+                  "8 seats",
+                  "9 people",
+                  "9 seats",
+                  "pickup",
+                  "pickup truck",
+                  "truck",
+                  "truck with cargo bed",
+                  "crossover",
+                  "CUV",
+                  "SUV",
+                  "van",
+                  "minivan",
+                  "mini van"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "compact",
+                "synonyms": [
+                  "my cat and i",
+                  "my dog and i",
+                  "me and my dog",
+                  "me and my cat",
+                  "just me and my cat",
+                  "just me and my dog",
+                  "only me",
+                  "2 people",
+                  "2 seats",
+                  "two seats",
+                  "not too big",
+                  "small",
+                  "convertible",
+                  "Cabriolet",
+                  "Semi-Convertible",
+                  "Cabrio Coach",
+                  "coupe",
+                  "sports car",
+                  "roadster"
+                ]
+              }
+            }
+          ],
+          "name": "spacious"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "reliable",
+                "synonyms": [
+                  "keep it for a while",
+                  "2021",
+                  "2020",
+                  "isn\u0027t a lemon",
+                  "not a lemon",
+                  "won\u0027t give up on me",
+                  "solid",
+                  "faithful",
+                  "stable",
+                  "need",
+                  "new car",
+                  "reliable",
+                  "2020 or newer"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "reliability not a priority",
+                "synonyms": [
+                  "used",
+                  "used car is fine",
+                  "the more beat up the better",
+                  "i want a lemon",
+                  "not reliable",
+                  "2019",
+                  "2018",
+                  "2017",
+                  "2016",
+                  "2015",
+                  "2014",
+                  "2013",
+                  "2012",
+                  "2011",
+                  "2010",
+                  "few years",
+                  "pre-owned",
+                  "second hand",
+                  "used car",
+                  "2010 or newer",
+                  "2011 or newer",
+                  "2012 or newer",
+                  "2013 or newer",
+                  "2014 or newer",
+                  "2015 or newer",
+                  "2016 or newer",
+                  "2017 or newer",
+                  "2018 or newer",
+                  "2019 or newer"
+                ]
+              }
+            }
+          ],
+          "name": "reliable"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "fuel efficient",
+                "synonyms": [
+                  "yep",
+                  "yass",
+                  "yaass",
+                  "yas",
+                  "yah",
+                  "yeah",
+                  "typically",
+                  "regularly",
+                  "almost always",
+                  "day and night",
+                  "mostly",
+                  "all the time",
+                  "most of the time",
+                  "usually",
+                  "always",
+                  "sometimes",
+                  "frequently",
+                  "often",
+                  "every day",
+                  "everyday"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "fuel efficiency not a priority",
+                "synonyms": [
+                  "once or twice a week",
+                  "nope",
+                  "nah",
+                  "weekend",
+                  "weekends",
+                  "once in a while",
+                  "barely",
+                  "from time to time",
+                  "infrequently",
+                  "almost never",
+                  "seldom",
+                  "occasionally",
+                  "never",
+                  "rarely"
+                ]
+              }
+            }
+          ],
+          "name": "fuelefficiency"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "cheap",
+                "synonyms": [
+                  "thirty six hundred",
+                  "thirty two hundred",
+                  "forty eight hundred",
+                  "three hundred",
+                  "ninety five hundred",
+                  "four hundred",
+                  "fifty five hundred",
+                  "eighty five hundred",
+                  "nine thousand",
+                  "eight hundred",
+                  "seven hundred",
+                  "forty five hundred",
+                  "sixty five hundred",
+                  "thirty five hundred",
+                  "twenty five hundred",
+                  "seventy five hundred",
+                  "six hundred",
+                  "three thousand",
+                  "eight thousand",
+                  "seven thousand",
+                  "six thousand",
+                  "20,000",
+                  "20.000",
+                  "20000",
+                  "15,000",
+                  "15.000",
+                  "15000",
+                  "10,000",
+                  "10.000",
+                  "10000",
+                  "cheapest",
+                  "cost efficient",
+                  "cost-effective",
+                  "cost effective",
+                  "less than 15k",
+                  "less than 15,000",
+                  "less than 15000",
+                  "less than 20000",
+                  "less than 20,000",
+                  "less than 20k",
+                  "less than 10,000",
+                  "less than 10k",
+                  "less than 10000",
+                  "10000 or lower",
+                  "10,000 or lower",
+                  "15,000 or lower",
+                  "15000 or lower",
+                  "20000 or lower",
+                  "20,000 or lower",
+                  "under 10K",
+                  "10K or lower",
+                  "20K or lower",
+                  "15K or lower",
+                  "under 15K",
+                  "under 20K",
+                  "reasonable",
+                  "low-cost",
+                  "affordable",
+                  "budget",
+                  "no fuss",
+                  "inexpensive"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "midrange",
+                "synonyms": [
+                  "sixty thousand",
+                  "59.000",
+                  "59,000",
+                  "59000",
+                  "58.000",
+                  "58,000",
+                  "58000",
+                  "57.000",
+                  "57,000",
+                  "57000",
+                  "56.000",
+                  "56,000",
+                  "56000",
+                  "54,000",
+                  "54.000",
+                  "54000",
+                  "53.000",
+                  "53,000",
+                  "53000",
+                  "52.000",
+                  "52,000",
+                  "52000",
+                  "51.000",
+                  "51,000",
+                  "51000",
+                  "49.000",
+                  "49,000",
+                  "49000",
+                  "48.000",
+                  "48,000",
+                  "48000",
+                  "47.000",
+                  "47,000",
+                  "47000",
+                  "46.000",
+                  "46,000",
+                  "46000",
+                  "44,000",
+                  "44.000",
+                  "44000",
+                  "43.000",
+                  "43,000",
+                  "43000",
+                  "42,000",
+                  "42.000",
+                  "42000",
+                  "41,000",
+                  "41.000",
+                  "41000",
+                  "39.000",
+                  "39,000",
+                  "39000",
+                  "38.000",
+                  "38,000",
+                  "38000",
+                  "37.000",
+                  "37,000",
+                  "37000",
+                  "36.000",
+                  "36,000",
+                  "36000",
+                  "34.000",
+                  "34,000",
+                  "34000",
+                  "33.000",
+                  "33,000",
+                  "33000",
+                  "32.000",
+                  "32,000",
+                  "32000",
+                  "31.000",
+                  "31,000",
+                  "31000",
+                  "29.000",
+                  "29,000",
+                  "29000",
+                  "28.000",
+                  "28,000",
+                  "28000",
+                  "27.000",
+                  "27,000",
+                  "27000",
+                  "26.000",
+                  "26,000",
+                  "26000",
+                  "24.000",
+                  "24,000",
+                  "24000",
+                  "23.000",
+                  "23,000",
+                  "23000",
+                  "22.000",
+                  "22,000",
+                  "22000",
+                  "21.000",
+                  "21,000",
+                  "21000",
+                  "59",
+                  "55k",
+                  "50k",
+                  "45k",
+                  "40k",
+                  "35k",
+                  "30k",
+                  "25k",
+                  "less than 60,000",
+                  "less than 60.000",
+                  "less than 60000",
+                  "55.000",
+                  "55,000",
+                  "55000",
+                  "50,000",
+                  "50.000",
+                  "50000",
+                  "45.000",
+                  "45,000",
+                  "45000",
+                  "40,000",
+                  "40.000",
+                  "40000",
+                  "35,000",
+                  "35.000",
+                  "35000",
+                  "30,000",
+                  "30.000",
+                  "30000",
+                  "25,000",
+                  "25.000",
+                  "25000",
+                  "less than 40000",
+                  "under forty k",
+                  "under 40k",
+                  "no more than 40k",
+                  "not more than 40K",
+                  "well built but durable",
+                  "midrange",
+                  "under 60.000",
+                  "under 60,000",
+                  "under 60000",
+                  "under 60K",
+                  "no more than 60k"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "luxury",
+                "synonyms": [
+                  "70000",
+                  "71000",
+                  "72000",
+                  "73000",
+                  "74000",
+                  "75000",
+                  "76000",
+                  "77000",
+                  "78000",
+                  "79000",
+                  "80000",
+                  "81000",
+                  "82000",
+                  "83000",
+                  "84000",
+                  "85000",
+                  "86000",
+                  "87000",
+                  "88000",
+                  "89000",
+                  "90000",
+                  "91000",
+                  "92000",
+                  "93000",
+                  "94000",
+                  "95000",
+                  "96000",
+                  "97000",
+                  "98000",
+                  "99000",
+                  "100000",
+                  "101000",
+                  "102000",
+                  "103000",
+                  "104000",
+                  "105000",
+                  "106000",
+                  "107000",
+                  "108000",
+                  "109000",
+                  "110000",
+                  "111000",
+                  "112000",
+                  "113000",
+                  "114000",
+                  "115000",
+                  "116000",
+                  "117000",
+                  "118000",
+                  "119000",
+                  "120000",
+                  "121000",
+                  "122000",
+                  "123000",
+                  "124000",
+                  "125000",
+                  "126000",
+                  "127000",
+                  "128000",
+                  "129000",
+                  "130000",
+                  "131000",
+                  "132000",
+                  "133000",
+                  "134000",
+                  "135000",
+                  "136000",
+                  "137000",
+                  "138000",
+                  "139000",
+                  "140000",
+                  "141000",
+                  "142000",
+                  "143000",
+                  "144000",
+                  "145000",
+                  "146000",
+                  "147000",
+                  "148000",
+                  "149000",
+                  "150000",
+                  "151000",
+                  "152000",
+                  "153000",
+                  "154000",
+                  "155000",
+                  "156000",
+                  "157000",
+                  "158000",
+                  "159000",
+                  "160000",
+                  "161000",
+                  "162000",
+                  "163000",
+                  "164000",
+                  "165000",
+                  "166000",
+                  "167000",
+                  "168000",
+                  "169000",
+                  "170000",
+                  "171000",
+                  "172000",
+                  "173000",
+                  "174000",
+                  "175000",
+                  "176000",
+                  "177000",
+                  "178000",
+                  "179000",
+                  "180000",
+                  "181000",
+                  "182000",
+                  "183000",
+                  "184000",
+                  "185000",
+                  "186000",
+                  "187000",
+                  "188000",
+                  "189000",
+                  "190000",
+                  "191000",
+                  "192000",
+                  "193000",
+                  "194000",
+                  "195000",
+                  "196000",
+                  "197000",
+                  "198000",
+                  "199000",
+                  "200000",
+                  "201000",
+                  "202000",
+                  "203000",
+                  "204000",
+                  "205000",
+                  "206000",
+                  "207000",
+                  "208000",
+                  "209000",
+                  "210000",
+                  "211000",
+                  "212000",
+                  "213000",
+                  "214000",
+                  "215000",
+                  "216000",
+                  "217000",
+                  "218000",
+                  "219000",
+                  "220000",
+                  "221000",
+                  "222000",
+                  "223000",
+                  "224000",
+                  "225000",
+                  "226000",
+                  "227000",
+                  "228000",
+                  "229000",
+                  "230000",
+                  "231000",
+                  "232000",
+                  "233000",
+                  "234000",
+                  "235000",
+                  "236000",
+                  "237000",
+                  "238000",
+                  "239000",
+                  "240000",
+                  "241000",
+                  "242000",
+                  "243000",
+                  "244000",
+                  "245000",
+                  "246000",
+                  "247000",
+                  "248000",
+                  "249000",
+                  "250000",
+                  "251000",
+                  "252000",
+                  "253000",
+                  "254000",
+                  "255000",
+                  "256000",
+                  "257000",
+                  "258000",
+                  "259000",
+                  "260000",
+                  "261000",
+                  "262000",
+                  "263000",
+                  "264000",
+                  "265000",
+                  "266000",
+                  "267000",
+                  "268000",
+                  "269000",
+                  "270000",
+                  "271000",
+                  "272000",
+                  "273000",
+                  "274000",
+                  "275000",
+                  "276000",
+                  "277000",
+                  "278000",
+                  "279000",
+                  "280000",
+                  "281000",
+                  "282000",
+                  "283000",
+                  "284000",
+                  "285000",
+                  "286000",
+                  "287000",
+                  "288000",
+                  "289000",
+                  "290000",
+                  "291000",
+                  "292000",
+                  "293000",
+                  "294000",
+                  "295000",
+                  "296000",
+                  "297000",
+                  "298000",
+                  "299000",
+                  "300000",
+                  "301000",
+                  "302000",
+                  "303000",
+                  "304000",
+                  "305000",
+                  "306000",
+                  "307000",
+                  "308000",
+                  "309000",
+                  "310000",
+                  "311000",
+                  "312000",
+                  "313000",
+                  "314000",
+                  "315000",
+                  "316000",
+                  "317000",
+                  "318000",
+                  "319000",
+                  "320000",
+                  "321000",
+                  "322000",
+                  "323000",
+                  "324000",
+                  "325000",
+                  "326000",
+                  "327000",
+                  "328000",
+                  "329000",
+                  "330000",
+                  "331000",
+                  "332000",
+                  "333000",
+                  "334000",
+                  "335000",
+                  "336000",
+                  "337000",
+                  "338000",
+                  "339000",
+                  "340000",
+                  "341000",
+                  "342000",
+                  "343000",
+                  "344000",
+                  "345000",
+                  "346000",
+                  "347000",
+                  "348000",
+                  "349000",
+                  "350000",
+                  "69.000",
+                  "69,000",
+                  "69000",
+                  "68.000",
+                  "68,000",
+                  "68000",
+                  "67.000",
+                  "67,000",
+                  "67000",
+                  "66,000",
+                  "66.000",
+                  "66000",
+                  "64.000",
+                  "64,000",
+                  "64000",
+                  "63000",
+                  "63.000",
+                  "63,000",
+                  "62.000",
+                  "62000",
+                  "62,000",
+                  "61000",
+                  "61.000",
+                  "61,000",
+                  "one hundred thousand",
+                  "eighty thousand",
+                  "seventy thousand",
+                  "65,000",
+                  "65.000",
+                  "65000",
+                  "65k",
+                  "luxury",
+                  "luxurious",
+                  "spending a bit more",
+                  "no limit",
+                  "no budget",
+                  "priceless",
+                  "big budget",
+                  "nice",
+                  "luxury",
+                  "expensive",
+                  "experience"
+                ]
+              }
+            }
+          ],
+          "name": "budget"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "rugged",
+                "synonyms": [
+                  "road less traveled",
+                  "off-road",
+                  "off road",
+                  "country side",
+                  "countryside",
+                  "rugged",
+                  "resilient",
+                  "wildness",
+                  "wild",
+                  "country-side",
+                  "rarely",
+                  "always",
+                  "often",
+                  "in winter",
+                  "bad weather"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "not rugged",
+                "synonyms": [
+                  "not really",
+                  "highway",
+                  "city",
+                  "seldom",
+                  "doesn\u0027t have to be rugged",
+                  "doesn\u0027t have to be robust",
+                  "i hope not",
+                  "hope not",
+                  "never",
+                  "no"
+                ]
+              }
+            }
+          ],
+          "name": "rugged"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "dummy value: literal API return entity"
+              }
+            }
+          ],
+          "name": "stringLiteral"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "name"
+              }
+            }
+          ],
+          "name": "name"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "reason"
+              }
+            },
+            {
+              "name": {
+                "value": "no reason",
+                "synonyms": [
+                  "looking around",
+                  "browsing",
+                  "just browsing",
+                  "no reason",
+                  "nothing in particular"
+                ]
+              }
+            }
+          ],
+          "name": "whatbringsyouhere"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "Acura",
+                "synonyms": [
+                  "acura\u0027s",
+                  "acuras"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Alfa Romeo",
+                "synonyms": [
+                  "alfa romeo\u0027s",
+                  "alfa romeos"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Aston Martin",
+                "synonyms": [
+                  "aston martin\u0027s",
+                  "aston martins"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Audi",
+                "synonyms": [
+                  "audi\u0027s",
+                  "audis"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "BMW",
+                "synonyms": [
+                  "bmw\u0027s",
+                  "bmws"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Bentley",
+                "synonyms": [
+                  "bentley\u0027s",
+                  "bentleys"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Buick",
+                "synonyms": [
+                  "buick\u0027s",
+                  "buicks"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Cadillac",
+                "synonyms": [
+                  "cadillac\u0027s",
+                  "cadillacs"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Chevrolet",
+                "synonyms": [
+                  "chevrolets",
+                  "chevrolet\u0027s"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Chrysler",
+                "synonyms": [
+                  "chryslers",
+                  "chrysler\u0027s"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Dodge",
+                "synonyms": [
+                  "dodge\u0027s",
+                  "dodges"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "FIAT",
+                "synonyms": [
+                  "fiats",
+                  "fiat\u0027s"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Ferrari",
+                "synonyms": [
+                  "ferrari\u0027s",
+                  "ferraris"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Ford",
+                "synonyms": [
+                  "ford\u0027s",
+                  "fords"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "GMC",
+                "synonyms": [
+                  "GMCs",
+                  "GMC\u0027s"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Genesis",
+                "synonyms": [
+                  "Genesiss",
+                  "Genesis\u0027s"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Honda",
+                "synonyms": [
+                  "honda\u0027s",
+                  "hondas"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Hyundai",
+                "synonyms": [
+                  "hyundais",
+                  "hyundai\u0027s"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "INFINITI",
+                "synonyms": [
+                  "infinitis",
+                  "infiniti\u0027s"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Jaguar",
+                "synonyms": [
+                  "jaguars",
+                  "jaguar\u0027s"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Jeep",
+                "synonyms": [
+                  "jeep\u0027s",
+                  "jeeps"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Kia",
+                "synonyms": [
+                  "kias",
+                  "kia\u0027s"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Lamborghini",
+                "synonyms": [
+                  "Lamborghinis",
+                  "Lamborghini\u0027s"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Land Rover",
+                "synonyms": [
+                  "land-rover\u0027s",
+                  "land-rovers",
+                  "land rover\u0027s",
+                  "land rovers"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Lexus",
+                "synonyms": [
+                  "Lexus\u0027s",
+                  "Lexuss"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Lincoln",
+                "synonyms": [
+                  "Lincolns",
+                  "Lincoln\u0027s"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "MINI",
+                "synonyms": [
+                  "mini\u0027s",
+                  "minis"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Maserati",
+                "synonyms": [
+                  "Maserati\u0027s",
+                  "Maseratis"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Mazda",
+                "synonyms": [
+                  "Mazda\u0027s",
+                  "Mazdas"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "McLaren",
+                "synonyms": [
+                  "McLaren\u0027s",
+                  "McLarens"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Mercedes-Benz",
+                "synonyms": [
+                  "Mercedes Benz\u0027s",
+                  "Mercedes Benzs",
+                  "Mercedes-Benzs",
+                  "Mercedes-Benz\u0027s"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Mitsubishi",
+                "synonyms": [
+                  "mitsubishis",
+                  "mitsubishi\u0027s"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Nissan",
+                "synonyms": [
+                  "nissans",
+                  "nissan\u0027s"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Porsche",
+                "synonyms": [
+                  "porsche\u0027s",
+                  "porsches"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Ram",
+                "synonyms": [
+                  "ram\u0027s",
+                  "rams"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Rolls-Royce",
+                "synonyms": [
+                  "rolls royces",
+                  "rolls-royces",
+                  "rolls-royce\u0027s",
+                  "rolls royce\u0027s",
+                  "rolls royce"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Smart",
+                "synonyms": [
+                  "smart\u0027s",
+                  "smarts"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Subaru",
+                "synonyms": [
+                  "subarus",
+                  "subaru\u0027s"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Tesla",
+                "synonyms": [
+                  "elon",
+                  "elon musk",
+                  "teslas",
+                  "tesla\u0027s"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Toyota",
+                "synonyms": [
+                  "toyota\u0027s",
+                  "toyotas"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Volkswagen",
+                "synonyms": [
+                  "VWs",
+                  "VW\u0027s",
+                  "Volkswagen\u0027s",
+                  "Volkswagens"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Volvo",
+                "synonyms": [
+                  "volvos",
+                  "volvo\u0027s"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "No preference",
+                "synonyms": [
+                  "keeping it open",
+                  "keep it open",
+                  "no brand preference",
+                  "any brand",
+                  "no preference",
+                  "volvo",
+                  "volkswagen",
+                  "toyota",
+                  "tesla",
+                  "subaru",
+                  "smart",
+                  "rolls-royce",
+                  "ram",
+                  "porsche",
+                  "nissan",
+                  "mitsubishi",
+                  "mercedes-benz",
+                  "mclaren",
+                  "mazda",
+                  "maserati",
+                  "mini",
+                  "lincoln",
+                  "lexus",
+                  "land rover",
+                  "lamborghini",
+                  "kia",
+                  "jeep",
+                  "jaguar",
+                  "infiniti",
+                  "hyndai",
+                  "honda",
+                  "genesis",
+                  "gmc",
+                  "ford",
+                  "ferrari",
+                  "fiat",
+                  "dodge",
+                  "chrysler",
+                  "chevrolet",
+                  "cadillac",
+                  "buick",
+                  "bentley",
+                  "bmw",
+                  "audi",
+                  "aston martin",
+                  "alfa romeo",
+                  "acura"
+                ]
+              }
+            }
+          ],
+          "name": "brand"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "url"
+              }
+            }
+          ],
+          "name": "url"
+        }
+      ],
+      "modelConfiguration": {
+        "fallbackIntentSensitivity": {
+          "level": "LOW"
+        }
+      }
+    }
+  },
+  "version": "27"
+}
